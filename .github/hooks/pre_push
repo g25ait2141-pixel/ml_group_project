@@ -1,0 +1,18 @@
+
+#!/bin/sh
+
+echo "Running flake8 before push..."
+
+flake8 .
+
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "flake8 failed."
+    echo "Push blocked."
+    exit 1
+fi
+
+echo ""
+echo "flake8 passed."
+echo "Push allowed."
+exit 0
