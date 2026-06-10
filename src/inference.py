@@ -16,11 +16,11 @@ def main():
     hf_token = os.environ.get("HF_TOKEN")
         
   
-    """classifier = pipeline(
+    classifier = pipeline(
         "text-classification",
         model=MODEL_ID,
         token=hf_token,
-    )"""
+    )
 
     result = classifier(input_text)[0]
     label_name = result["label"]
