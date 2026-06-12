@@ -6,6 +6,7 @@ MODEL_ID = "mehtayash12345678/mlops-ag_news_classification-distilbert"
 # TODO: Replace with id2label.json when merged into develop
 LABELS = ["World", "Sports", "Business", "Sci/Tech"]
 
+
 def main():
     input_text = os.environ.get("INPUT_TEXT")
     if not input_text:
@@ -27,6 +28,7 @@ def main():
     print(f"Input: {input_text}")
     print(f"Predicted Label: {label_name}")
     print(f"Confidence: {confidence:.4f}")
+
 
 if __name__ == "__main__":
     main()
