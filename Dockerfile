@@ -7,12 +7,6 @@ ENV PYTHONUNBUFFERED=1
 # Set working directory inside container
 WORKDIR /app
 
-# Hugging Face model argument
-ARG HF_MODEL_NAME=mlops-ag_news_classification-distilbert
-
-# Make model accessible inside container
-ENV HF_MODEL_NAME=${HF_MODEL_NAME}
-
 # Copy dependency file
 COPY requirements.txt .
 
@@ -22,9 +16,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy source code
 COPY src/ ./src
-
-# Copy label mapping
-COPY id2label.json .
 
 # Default command to run inference
 CMD ["python", "src/inference.py"]
