@@ -6,8 +6,7 @@ MODEL_ID = "mehtayash12345678/mlops-ag_news_classification-distilbert"
 # TODO: Replace with id2label.json when merged into develop
 LABELS = ["World", "Sports", "Business", "Sci/Tech"]
 
-WANDB_PROJECT = "mlops-ag_news_classification-distilbert"
-WANDB_ENTITY = "g25ait2133-indian-institute-technology-jodhpur"
+
 
 
 def main():
@@ -17,11 +16,7 @@ def main():
 
     hf_token = os.environ.get("HF_TOKEN")
 
-    #wandb.init(
-        #project=WANDB_PROJECT,
-        #entity=WANDB_ENTITY,
-        #job_type="inference",
-    #)
+  
 
     classifier = pipeline(
         "text-classification",
@@ -38,16 +33,7 @@ def main():
     print(f"Predicted Label: {label_name}")
     print(f"Confidence: {confidence:.4f}")
 
-    #wandb.log(
-       # {
-         #   "input_text": input_text,
-          #  "predicted_label": label_name,
-          #  "confidence": confidence,
-       # }
-    #)
-
-    #wandb.finish()
-
+   
 
 if __name__ == "__main__":
     main()
