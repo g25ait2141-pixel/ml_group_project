@@ -29,10 +29,10 @@ jobs:
       
         - name: Build image
           run: |
-            docker build -t ${{ secrets.DOCKER_USERNAME }}/mlops-project:Test .
+            docker build -t ${{ secrets.DOCKER_USERNAME }}/Test_Image .
     
         - name: Push image
           run: |
-            docker push ${{ secrets.DOCKER_USERNAME }}/mlops-project:Test
+            docker push ${{ secrets.DOCKER_USERNAME }}/Test_Image
 
  
