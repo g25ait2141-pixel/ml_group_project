@@ -1,5 +1,5 @@
 import os
-import wandb
+# import wandb
 from transformers import pipeline
 
 MODEL_ID = "mehtayash12345678/mlops-ag_news_classification-distilbert"
